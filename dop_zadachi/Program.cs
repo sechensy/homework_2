@@ -63,11 +63,11 @@ void Task4()
     while (number > 0)
     {
         last_element = number % 10;
-        if (last_element > max) {
+        if (last_element >= max) {
             max = last_element;
             k = i;
         }
-        if (last_element < min) {
+        if (last_element <= min) {
             min = last_element;
             h = i;
         }
