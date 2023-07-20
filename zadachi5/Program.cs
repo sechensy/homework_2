@@ -12,11 +12,9 @@ class Program
         {
             int size = MyLibClass.Input("Введите размер массива: "); ;
             int[] numbers = new int[size];
-            int start_number = 100;//левая граница в диапазоне случайных чисел
-            int finish_number = 1000;//правая граница в диапазоне случайных чисел
             int amount = 0;
 
-            MyLibClass.FillArr(numbers, start_number, finish_number);
+            MyLibClass.FillArr(numbers, 100, 1000);
 
             Console.Write("Заполненный массиве: ");
             MyLibClass.PrintAr(numbers);
@@ -31,7 +29,8 @@ class Program
                 }
             }
             Console.WriteLine();
-            Console.Write($"Количество четных чисел в массиве равно {amount}");
+            if(amount > 0) Console.Write($"/n Количество четных чисел в массиве равно {amount}");
+            else Console.Write("Четных чисел в массиве нет");
         }
 
         //Задача 36: Задайте одномерный массив, заполненный случайными числами. 
@@ -41,10 +40,8 @@ class Program
             int size = MyLibClass.Input("Введите размер массива: ");
             int[] arr = new int[size];
             int sum = 0;
-            int start_number = -10;
-            int finish_number = 10;
 
-            MyLibClass.FillArr(arr, start_number, finish_number);
+            MyLibClass.FillArr(arr, -10, 10);
 
             Console.Write("Заполненный массиве: ");
             MyLibClass.PrintAr(arr);
@@ -73,7 +70,7 @@ class Program
             Random rnd = new Random();
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = Convert.ToDouble(rnd.Next(-10000, 10000)/100.0);
+                arr[i] = Convert.ToDouble(rnd.Next(-10000, 10000) / 100.0);
             }
 
             for (int i = 0; i < arr.Length; i++)
