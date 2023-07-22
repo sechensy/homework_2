@@ -36,14 +36,14 @@ class Program
             double b2 = MyLibClass.Input("Введите b2: ");
 
             double x = (b2 - b1) / (k1 - k2);
-            double y1 = k1 * x + b1;
-            double y2 = k2 * x + b2;
+            double y1 = Math.Round(k1 * x + b1);
+            double y2 = Math.Round(k2 * x + b2);
             // Console.WriteLine(y1);
             // Console.WriteLine(y2);
 
-            if (Math.Round(y1,2) == Math.Round(y2,2)) 
+            if (y1 == y2) 
             {
-                Console.WriteLine($"Точка пересечения прямой y={k1}x+{b1} и y={k2}x+{b2} равна {(Math.Round(y1,2),Math.Round(x,2))}");
+                Console.WriteLine($"Точка пересечения прямой y={k1}x+{b1} и y={k2}x+{b2} равна {(y1,Math.Round(x,2))}");
             }
 
             else Console.WriteLine($"Прямые y={k1}x+{b1} и y={k2}x+{b2} не пересекаются");
