@@ -136,37 +136,37 @@ class Program
             int number = 1;
             int[,] array = new int[rows, cols];
 
-            int StartIndex_rows = 0;
-            int FinishIndex_rows = rows-1;
-            int StartIndex_cols = 0;
-            int FinishIndex_cols = cols-1;
+            int FirstIndex_rows = 0;
+            int LastIndex_rows = rows-1;
+            int FirstIndex_cols = 0;
+            int LastIndex_cols = cols-1;
 
-            while(StartIndex_rows <= FinishIndex_rows && StartIndex_cols <= FinishIndex_cols)
+            while(FirstIndex_rows <= LastIndex_rows && FirstIndex_cols <= LastIndex_cols)
             {
-                for (int j = StartIndex_cols; j <= FinishIndex_cols; j++)
+                for (int j = FirstIndex_cols; j <= LastIndex_cols; j++)
                 {
-                    array[StartIndex_rows, j] = number;
+                    array[FirstIndex_rows, j] = number;
                     number++;
                 }
-                StartIndex_rows++;
-                for (int i = StartIndex_rows; i <= FinishIndex_rows; i++)
+                FirstIndex_rows++;
+                for (int i = FirstIndex_rows; i <= LastIndex_rows; i++)
                 {
-                    array[i, FinishIndex_cols] = number;
+                    array[i, LastIndex_cols] = number;
                     number++;
                 }
-                FinishIndex_cols--;
-                for (int j = FinishIndex_cols; j >= StartIndex_cols; j--)
+                LastIndex_cols--;
+                for (int j = LastIndex_cols; j >= FirstIndex_cols; j--)
                 {
-                    array[FinishIndex_rows, j] = number;
+                    array[LastIndex_rows, j] = number;
                     number++;
                 }
-                FinishIndex_rows--;
-                for (int i = FinishIndex_rows; i >= StartIndex_rows; i--)
+                LastIndex_rows--;
+                for (int i = LastIndex_rows; i >= FirstIndex_rows; i--)
                 {
-                    array[i,StartIndex_cols] = number;
+                    array[i,FirstIndex_cols] = number;
                     number++;
                 }
-                StartIndex_cols++;
+                FirstIndex_cols++;
             }
             MyLibClass.PrintArray(array);
         }
