@@ -54,12 +54,12 @@ class Program
             int Recursion(int m, int n)
             {
                 if (m == 0) return n + 1;
-                if (n == 0) return Recursion(m - 1, 1);
+                else if (n == 0) return Recursion(m - 1, 1);
                 else return Recursion(m - 1, Recursion(m, n - 1));
             }
             int m = Input("Введите первое число: ");
             int n = Input("Введите второе число: ");
-            int result = Recursion(3, 2);
+            int result = Recursion(m, n);
             Console.WriteLine($"Функции Аккермана от {m} и {n} равна {result}");
         }
 
