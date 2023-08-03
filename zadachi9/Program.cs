@@ -17,7 +17,7 @@ class Program
             void Recursion(int M, int N)
             {
                 if (M > N) return;
-                if (M % 3 == 0) Console.WriteLine($"{M} ");
+                if (M % 3 == 0) Console.Write($"{M} ");
                 Recursion(M + 1, N);
             }
             int M = Input("Введите первое число: ");
